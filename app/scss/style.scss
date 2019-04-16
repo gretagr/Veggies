@@ -3,6 +3,7 @@ html {
   font-size: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 *, *:before, *:after {
@@ -10,32 +11,13 @@ html {
 }
 
 body {
-  color: #000;
+  color: #3c3c3c;
   font-family: 'Merriweather', serif;
   margin: 0;
   padding: 0;
 }
 
-main {
-
-}
-
-nav {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 18px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 20px 10vw 20px 0;
-
-  li {
-    display: inline;
-    padding: 20px;
-    cursor: pointer;
-  }
-}
+// ================ header styles =============
 
 .hero {
   width: 100vw;
@@ -44,6 +26,22 @@ ul {
       image: url("../app/images/hero.jpg");
       size: cover;
     }
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 18px;
+
+    ul {
+      list-style-type: none;
+      padding: 20px 10vw 20px 0;
+
+      li {
+        display: inline;
+        padding: 20px;
+        cursor: pointer;
+      }
+    }
+  }
   .header-text-block {
     max-width: 30vw;
     margin-right: 11vw;
@@ -54,13 +52,15 @@ ul {
     justify-content: center;
     float: right;
     text-align: center;
+
     h1 {
       font-weight: 300;
-      font-size: 24px;
+      font-size: 30px;
     }
   }
-
 }
+
+// ================ three columns section styles =============
 
 .columns {
   background: {
@@ -70,6 +70,7 @@ ul {
   height: 40vh;
   display: flex;
   justify-content: space-around;
+
   .column {
     display: flex;
     justify-content: center;
@@ -77,31 +78,38 @@ ul {
     flex-direction: column;
     width: 30%;
     text-align: center;
+
     img {
       max-width: 50px;
       max-height: 50px;
     }
+
     h2 {
       text-transform: uppercase;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 300;
     }
+
     p {
-      max-width: 300px;
+      max-width: 260px;
       margin: 0;
       font-size: 14px;
     }
-
-
   }
 }
 
+
+// ================ specials section styles =============
+
 .specials {
+  padding-bottom: 60px;
+
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     h2 {
       font-size: 30px;
       font-weight: 300;
@@ -109,6 +117,7 @@ ul {
       margin-bottom: 10px;
     }
   }
+
   .items {
     display: flex;
     justify-content: center;
@@ -117,47 +126,277 @@ ul {
     flex-wrap: wrap;
     margin: 0 auto;
     padding-top: 60px;
+
     .item {
       display: flex;
       width: 33%;
       justify-content: flex-end;
       align-items: flex-start;
+
       img, .text {
         width: 50%;
+        margin: 0;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        p {
+          font-size: 14px;
+          padding: 0 20px;
+          margin: 0;
+          margin-bottom: 10px;
+          line-height: 20px;
+        }
+
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 0;
+
+          &:after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 1px;
+            background-color: #000;
+            margin: 10px auto;
+          }
+        }
+
+        p:nth-child(3) {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// ================ ABOUT US section styles =============
+
+.about {
+  height: 100%;
+  width: 100vw;
+  background-color: #eeefef;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .beans {
+    max-width: 45%;
+    margin-top: 60px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .signature {
+      position: relative;
+      right: -15%;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 300;
+    }
+
+    p {
+      max-width: 60%;
+      font-size: 24px;
+      line-height: 45px;
+    }
+  }
+}
+
+
+// ================ MENU section styles =============
+.menu {
+  padding-bottom: 60px;
+}
+.menu-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  nav {
+
+    ul {
+      width: 100%;
+      text-align: center;
+      padding: 40px 0 40px 0;
+      list-style-type: none;
+
+      li {
+        font-size: 18px;
+        cursor: pointer;
+        display: inline;
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.menu-items {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  .menu-column {
+    width: 47%;
+    .menu-item {
+      padding-bottom: 25px;
+      .description {
+        margin-top: 0;
+        padding-bottom: 0;
+      }
+
+      .holder {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          right: 0;
+          height: 1px;
+          border-bottom: 2px dotted #000;
+          z-index: -1;
+        }
+        .name {
+        text-transform: uppercase;
+        background-color: #fff;
+        padding-right: 10px;
+        }
+        .price {
+          background-color: #fff;
+          padding-left: 10px;
+          float: right;
+        }
+      }
+      .description {
+        width: 100%;
+        font-style: italic;
+      }
+      p {
         margin: 0;
       }
     }
   }
 }
 
-.text {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  p {
-    font-size: 14px;
-    padding: 0 20px;
-    margin: 0;
-    margin-bottom: 10px;
-    line-height: 20px;
+
+// ================ footer section styles =============
+
+
+footer {
+  background: {
+    image: url("../app/images/footer.png");
+    size: cover;
   }
-  h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 0;
-    &:after {
-      content: "";
-      display: block;
-      width: 80%;
-      height: 1px;
-      background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    .social {
+      width: 75%;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        padding-left: 10px;
+      }
+    }
+    h3 {
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        padding-top: 30px;
+        font-size: 30px;
+        font-weight: 300;
+      }
+      img {
+        padding-bottom: 30px;
+      }
+
+    }
+    .address {
+      display: flex;
+      justify-content: space-between;
+      width: 75%;
+      p {
+        margin: 0;
+      }
+      div {
+
+      }
+    }
+    .contact-us {
+      width: 75%;
+      padding-top: 30px;
       margin: 10px auto;
     }
-  }
-  p:nth-child(3) {
-    font-weight: 600;
+    form {
+      width: 75%;
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      input{
+        background-color: transparent;
+        font-family: 'Merriweather', serif;
+        font-size: 16px;
+        &:focus {
+          outline: none;
+        }
+      }
+      input[type="text"], input[type="email"] {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+        width: 48%;
+        padding: 8px 0;
+        font-style: italic;
+      }
+      input[type="text"].msg {
+        width: 100%;
+        margin-top: 50px;
+      }
+      input[type="button"] {
+        border: 1px solid black;
+        width: 100px;
+        margin: 50px auto;
+        padding: 15px 10px;
+      }
+
+
+    }
   }
 }
